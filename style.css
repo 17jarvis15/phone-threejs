@@ -4,16 +4,63 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #111;
+  background: radial-gradient(circle at center, #26364a, #050505);
+  font-family: Arial, sans-serif;
 }
 
 #webgl {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+.label {
+  position: absolute;
+  left: 40px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #00c6ff, #7b2ff7);
+  box-shadow: 0 0 25px rgba(0, 198, 255, 0.7);
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: showLabel 2.5s ease forwards;
+}
+
+.label1 {
+  top: 80px;
+  animation-delay: 1s;
+}
+
+.label2 {
+  top: 150px;
+  animation-delay: 4s;
+}
+
+.label3 {
+  top: 220px;
+  animation-delay: 7s;
+}
+
+@keyframes showLabel {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  20%, 80% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
 }
